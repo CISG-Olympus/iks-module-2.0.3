@@ -54,12 +54,12 @@ module "terraform-intersight-iks" {
     use_existing         = false
     create_new           = false
     name                 = "runtime"
-    http_proxy_hostname  = "proxy.com"
+    http_proxy_hostname  = "proxy.esl.cisco.com"
     http_proxy_port      = 80
     http_proxy_protocol  = "http"
     http_proxy_username  = null
     http_proxy_password  = null
-    https_proxy_hostname = "proxy.com"
+    https_proxy_hostname = "proxy.esl.cisco.com"
     https_proxy_port     = 8080
     https_proxy_protocol = "https"
     https_proxy_username = null
