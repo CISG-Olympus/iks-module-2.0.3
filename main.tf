@@ -20,7 +20,7 @@ module "terraform-intersight-iks" {
 
   sysconfig = {
     use_existing = false
-    name         = "New"
+    name         = "iks-sysconfig-tf"
     domain_name  = "olympus.io"
     timezone     = "Europe/London"
     ntp_servers  = ["10.50.136.1"]
@@ -53,7 +53,7 @@ module "terraform-intersight-iks" {
   runtime_policy = {
     use_existing         = false
     create_new           = false
-    name                 = "runtime"
+    name                 = "iks-runtime-tf"
     http_proxy_hostname  = "proxy.esl.cisco.com"
     http_proxy_port      = 80
     http_proxy_protocol  = "http"
@@ -69,7 +69,7 @@ module "terraform-intersight-iks" {
   # Infra Config Policy Information
   infra_config_policy = {
     use_existing     = false
-    name             = "vcenter"
+    name             = "iks-vcenter-tf"
     vc_target_name   = "10.52.232.60"
     vc_portgroups    = ["Storage Controller Management Network"]
     vc_datastore     = "Athena-DS1"
@@ -96,17 +96,17 @@ module "terraform-intersight-iks" {
   #]
   instance_type = {
     use_existing = false
-    name         = "small"
+    name         = "iks-small-tf"
     cpu          = 4
     memory       = 16386
     disk_size    = 40
   }
   # Cluster information
   cluster = {
-    name                = "iks-zeus"
+    name                = "iks-zeus-tf"
     action              = "Deploy"
     wait_for_completion = false
-    worker_nodes        = 3
+    worker_nodes        = 2
     load_balancers      = 1
     worker_max          = 20
     control_nodes       = 1
