@@ -77,7 +77,23 @@ module "terraform-intersight-iks" {
     vc_resource_pool = ""
     vc_password      = var.vc_password
   }
-
+    
+  #addons_list = [
+   # {
+   #  addon_policy_name = "iks-dashboard"
+   #  addon             = "kubernetes-dashboard"
+   #  description       = "K8s Dashboard Policy"
+   #  upgrade_strategy  = "AlwaysReinstall"
+   #  install_strategy  = "InstallOnly"
+   #  },
+   #  {
+   #    addon_policy_name = "iks-monitor"
+   #    addon             = "ccp-monitor"
+   #    description       = "Grafana Policy"
+   #    upgrade_strategy  = "AlwaysReinstall"
+   #    install_strategy  = "InstallOnly"
+    # }
+  #]
   instance_type = {
     use_existing = false
     name         = "iks-small-tf"
