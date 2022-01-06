@@ -6,7 +6,7 @@ provider "intersight" {
 
 module "terraform-intersight-iks" {
   source = "terraform-cisco-modules/iks/intersight"
-  version = "2.0.4"
+  version = "2.1.0"
 
   ip_pool = {
     use_existing        = true
@@ -78,22 +78,23 @@ module "terraform-intersight-iks" {
     vc_password      = var.vc_password
   }
     
-  #addons_list = [
-   # {
-   #  addon_policy_name = "iks-dashboard"
-   #  addon             = "kubernetes-dashboard"
-   #  description       = "K8s Dashboard Policy"
-   #  upgrade_strategy  = "AlwaysReinstall"
-   #  install_strategy  = "InstallOnly"
-   #  },
-   #  {
-   #    addon_policy_name = "iks-monitor"
-   #    addon             = "ccp-monitor"
-   #    description       = "Grafana Policy"
-   #    upgrade_strategy  = "AlwaysReinstall"
-   #    install_strategy  = "InstallOnly"
-    # }
-  #]
+  addons = [
+    {
+     addon_policy_name = "iks-dashboard"
+     addonName         = "kubernetes-dashboard"
+     description       = "K8s Dashboard Policy"
+     upgrade_strategy  = "AlwaysReinstall"
+     install_strategy  = "InstallOnly"
+     },
+     {
+       addon_policy_name = "iks-monitor"
+       addonName         = "ccp-monitor"
+       description       = "Grafana Policy"
+       upgrade_strategy  = "AlwaysReinstall"
+       install_strategy  = "InstallOnly"
+     }
+  ]
+  
   instance_type = {
     use_existing = false
     name         = "iks-small-tf"
