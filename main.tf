@@ -63,6 +63,7 @@ module "terraform-intersight-iks" {
     useExisting = true
     policyName     = "1-19-15-iks.3"
     iksVersionName = "1.19.15-iks.3"
+ }
 
  # Do I need to include this?
   # k8s_version = {
