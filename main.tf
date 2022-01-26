@@ -57,14 +57,18 @@ module "terraform-intersight-iks" {
 
   
 # Version policy (To create new change "useExisting" to 'false' uncomment variables and modify them to meet your needs.)
+  
 # What is wrong here???
+  
   # Version policy (To create new change "useExisting" to 'false' uncomment variables and modify them to meet your needs.)
   versionPolicy = {
-    useExisting = true
-    policyName     = "1-19-15-iks.3"
-    iksVersionName = "1.19.15-iks.3"
+    useExisting = false
+    policyName     = "1-19-15-iks.5"
+    iksVersionName = "1.19.15-iks.5"
  }
-
+  
+# Why is it erroring on k8s_version?
+  
  # Do I need to include this?
   # k8s_version = {
     # useExisting = true
